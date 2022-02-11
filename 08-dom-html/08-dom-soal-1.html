@@ -172,6 +172,24 @@
     <!-- JavaScript -->
     <script>
       /// EDIT HERE
+      const btnMdal = document.querySelectorAll('.btn-modal')
+
+      for (let btnMdl of btnMdal) {
+        btnMdl.onclick = function () {
+          const cardId = btnMdl.getAttribute('card-id')
+          const cardTitle = document.querySelector(`#card-${cardId}-title`);
+          const modalTitle = document.getElementById('modal-title')
+          modalTitle.innerHTML = cardTitle.innerHTML
+          const cardText = document.querySelector(`#card-${cardId}-text`)
+          const modalText = document.getElementById('modal-text')
+          modalText.innerHTML = cardText.innerHTML
+          const cardImage = document.querySelector('card-image')
+          const modalImage = document.getElementById(`#card-${cardImage}-image`)
+          const addImage = document.getElementsByName('src')
+          const image = document.getElementsByName(`src-${addImage}`)
+          console.log(image);
+        }
+      }
     </script>
 
     <!-- Bootstrap Bundle with Popper -->
