@@ -176,20 +176,20 @@
 
       for (let btnMdl of btnMdal) {
         btnMdl.onclick = function () {
-          const cardId = btnMdl.getAttribute('card-id')
+          const cardId = btnMdl.getAttribute('card-id');
           const cardTitle = document.querySelector(`#card-${cardId}-title`);
-          const modalTitle = document.getElementById('modal-title')
+          const modalTitle = document.getElementById('modal-title');
           modalTitle.innerHTML = cardTitle.innerHTML
 
-          const cardText = document.querySelector(`#card-${cardId}-text`)
-          const modalText = document.getElementById('modal-text')
+          const cardText = document.querySelector(`#card-${cardId}-text`);
+          const modalText = document.getElementById('modal-text');
           modalText.innerHTML = cardText.innerHTML  
 
           const cardImage = document.querySelector(`#card-${cardId}-image`);
-          const modalImage = document.getElementById('modal-image')
-          const getImage = cardImage.getAttribute('src')
-          const setImage = modalImage.setAttribute('src', getImage)
-          console.log(modalImage);
+          const modalImage = document.getElementById('modal-image');
+
+          const getImage = cardImage.getAttribute('src');
+          const setImage = modalImage.setAttribute('src', getImage);
         }
       }
 

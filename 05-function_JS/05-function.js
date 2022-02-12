@@ -99,19 +99,31 @@ console.log(convToUpperCase('helloworldwide'))
 /// (String) huruf yang pertama kali tidak ada kembarannya
 
 /// EDIT HERE
-function firstNonRepeatedChar(word)
-
-{let getReapetedChars = (str) => {
-    const chars = {};
-    for (const char of str) {
-        chars[char] = (chars[char] || 0) + 1;
-    }
-    return Object.entries(chars).filter(char => char[1]).map(char => char[0]);
+function firstNonRepeatedChar(word) {
+    //find characters that is not same
+    for (let i = 0; i < word.length; i++) {
+        huruf = word[i];
+        if (huruf == ' ') {
+            return 'kata tidak boleh dipisah';
+        }
+    } for (let i=0; i < word.length; i++) {
+        huruf = word[i];
+        let check = false;
+        for (let j=0; j<word.length; j++){
+            if(huruf == word[j] && j !=i){
+                check = true;
+            }
+        } if (check == false) {
+            return huruf;
+        }
+    } return '';
 }
-console.log(getReapetedChars('ooohoowh'))}
+console.log(firstNonRepeatedChar('hello world'));
 
-{
+
+
+/*{
     if (word.includes(' ')){
         console.log('kata tidak boleh dipisah')
     } else if (word == getReapetedChars == 0) console.log('');
-}
+}*/
