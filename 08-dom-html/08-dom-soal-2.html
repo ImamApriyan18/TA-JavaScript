@@ -166,7 +166,58 @@
       const elBtnCancel = document.querySelector('#btn-cancel');
       
       // EDIT HERE
+      const rmvCment = document.querySelector('.col-12')
+      const addCment = document.querySelector('.btn')
 
+      elBtnComment.addEventListener('click', showCment)
+      elBtnCancel.addEventListener('click', cancelCment)
+      elBtnSubmit.addEventListener('click', submitCment)
+
+      function showCment (){
+        rmvCment.classList.remove('d-none');
+        addCment.classList.add('d-none');
+      }
+
+      function cancelCment(){
+        rmvCment.classList.add('d-none');
+        addCment.classList.remove('d-none');
+
+        var Username = elInputUsername.value = '';
+        var Comment = elInputComment.value = '';
+      }
+
+      function submitCment(){
+        event.preventDefault();
+
+        var Username = elInputUsername.value;
+        var Comment = elInputComment.value;
+
+        alert('Terima Kasih Sudah Berkomentar : ' + Username);
+
+        let li = document.createElement('li')
+        elCommentList.appendChild(li).innerHTML = `<li
+        class='
+          list-group-item
+          d-flex
+          justify-content-between
+          align-items-start
+          '
+        >
+          <div class='ms-2 me-auto'>
+            <div class='fw-bold text-capitalize'>${Username}</div>${Comment}
+          </div>
+        </li>`;
+      
+      console.log(Username);
+      console.log(Comment);
+
+      rmvCment.classList.add('d-none');
+      addCment.classList.remove('d-none');
+
+      var Username = elInputUsername.value = '';
+      var Comment = elInputComment.value = '';
+      
+      }
     </script>
   </body>
 </html>

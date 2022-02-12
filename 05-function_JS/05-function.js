@@ -119,11 +119,3 @@ function firstNonRepeatedChar(word) {
     } return '';
 }
 console.log(firstNonRepeatedChar('hello world'));
-
-
-
-/*{
-    if (word.includes(' ')){
-        console.log('kata tidak boleh dipisah')
-    } else if (word == getReapetedChars == 0) console.log('');
-}*/
